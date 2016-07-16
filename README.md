@@ -4,6 +4,27 @@ This package is perfect for asking the users of your command line interface to p
 
 Although it's not a explicit requirement, the package works best when used in combination with [args](https://github.com/leo/args).
 
+## Usage
+
+Firstly, install the package:
+
+```bash
+npm install --save ask
+```
+
+Once you're done, you can start using it:
+
+```js
+import { prompt } from 'ask'
+
+const answers = await prompt([
+  {
+    name: 'author',
+    message: 'Who are you?'
+  }
+])
+```
+
 ## Contribute
 
 1. [Fork](https://help.github.com/articles/fork-a-repo/) this repository to your own GitHub account and then [clone](https://help.github.com/articles/cloning-a-repository/) it to your local device
