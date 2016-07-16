@@ -58,6 +58,8 @@
     "gulp-cached": "^1.1.0"
   },
   "dependencies": {
+    "camelcase": "^3.0.0",
+    "capitalize-first-letter": "^1.0.0",
     "chalk": "^1.1.3"
   }
 }

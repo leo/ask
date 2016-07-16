@@ -17,6 +17,13 @@ const singleQuestion = {
 }
 
 let results = (async function() {
-  const result = await prompt(singleQuestion)
+  let result
+
+  try {
+    result = await prompt('tested')
+  } catch (err) {
+    console.error(err)
+  }
+
   console.log(result)
 })()

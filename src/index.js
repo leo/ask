@@ -1,4 +1,7 @@
 import { green, bold } from 'chalk'
+import camelCase from 'camelcase'
+import capitalize from 'capitalize-first-letter'
+
 const { stdin, stdout } = process
 
 const ask = async question => new Promise(resolve => {
@@ -22,6 +25,18 @@ const ask = async question => new Promise(resolve => {
 export async function prompt (questions) {
   let list = [],
       details = {}
+
+  if (typeof questions === 'string') {
+    const question = questions
+    questions = []
+
+    const name = camelCase(question)
+
+    questions.push({
+      name,
+      message: capitalize(name)
+    })
+  }
 
   if (!Array.isArray(questions)) {
     // Make a copy instead of using the instance
