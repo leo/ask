@@ -1,6 +1,6 @@
 # ask
 
-This package is perfect for asking the users of your command line interface to provide a certain kind of information that's needed to continue with execution.
+This package is perfect for asking the users of your command line interface to provide a certain kind of information that's needed for continuing with execution of the program.
 
 ## Contribute
 
