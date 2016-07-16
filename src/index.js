@@ -1,11 +1,30 @@
+import { green } from 'chalk'
+
+const ask = async question => new Promise(resolve => {
+  let answer
+
+  process.stdin.resume()
+  process.stdout.write(green('test '))
+
+  process.stdin.on('data', data => {
+    // ctrl-c ( end of text )
+    if (String(data) === '\u0003') {
+      process.exit()
+    }
+
+    resolve(String(data))
+  })
+})
+
 export async function prompt (questions) {
   let list = [],
       details = {}
 
+  process.stdin.resume()
+  process.stdin.setEncoding('utf8')
+
   for (let question of questions) {
-    let asker = new Promise((resolve, reject) => {
-      resolve('test')
-    })
+    let asker = await ask(question)
 
     let index = list.push(asker)
     details[index] = question
