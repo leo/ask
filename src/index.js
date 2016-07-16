@@ -7,7 +7,7 @@ const ask = async question => new Promise(resolve => {
   process.stdout.write(green('test '))
 
   process.stdin.on('data', data => {
-    // ctrl-c ( end of text )
+    // CTRL + C (end of text)
     if (String(data) === '\u0003') {
       process.exit()
     }
@@ -19,6 +19,14 @@ const ask = async question => new Promise(resolve => {
 export async function prompt (questions) {
   let list = [],
       details = {}
+
+  if (!Array.isArray(questions)) {
+    // Make a copy instead of using the instance
+    const question = Object.assign({}, questions)
+    questions = []
+
+    questions.push(question)
+  }
 
   process.stdin.resume()
   process.stdin.setEncoding('utf8')

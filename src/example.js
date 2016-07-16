@@ -11,7 +11,12 @@ const questions = [
   }
 ]
 
+const singleQuestion = {
+  name: 'sheesh',
+  message: 'Sheesh?'
+}
+
 let results = (async function() {
-  const result = await prompt(questions)
+  const result = await prompt(singleQuestion)
   console.log(result)
 })()
