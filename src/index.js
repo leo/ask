@@ -1,18 +1,20 @@
-import { green } from 'chalk'
+import { green, bold } from 'chalk'
 
 const ask = async question => new Promise(resolve => {
   let answer
 
   process.stdin.resume()
-  process.stdout.write(green('test '))
+  process.stdout.write(green('?') + ' ' + bold(question.message) + ' ')
 
   process.stdin.on('data', data => {
+    const theString = String(data)
+
     // CTRL + C (end of text)
-    if (String(data) === '\u0003') {
+    if (theString === '\u0003' || theString === 'exit\n') {
       process.exit()
     }
 
-    resolve(String(data))
+    resolve(theString)
   })
 })
 

@@ -12,8 +12,8 @@ const questions = [
 ]
 
 const singleQuestion = {
-  name: 'sheesh',
-  message: 'Sheesh?'
+  name: 'title',
+  message: 'Project name'
 }
 
 let results = (async function() {
