@@ -1,12 +1,13 @@
 import { green, bold } from 'chalk'
+const { stdin, stdout } = process
 
 const ask = async question => new Promise(resolve => {
   let answer
 
-  process.stdin.resume()
-  process.stdout.write(green('?') + ' ' + bold(question.message) + ' ')
+  stdin.resume()
+  stdout.write(green('?') + ' ' + bold(question.message) + ' ')
 
-  process.stdin.on('data', data => {
+  stdin.on('data', data => {
     const theString = String(data)
 
     // CTRL + C (end of text)
@@ -30,8 +31,8 @@ export async function prompt (questions) {
     questions.push(question)
   }
 
-  process.stdin.resume()
-  process.stdin.setEncoding('utf8')
+  stdin.resume()
+  stdin.setEncoding('utf8')
 
   for (let question of questions) {
     let asker = await ask(question)
