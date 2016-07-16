@@ -2,7 +2,7 @@
   "name": "ask",
   "version": "2.0.0",
   "description": "Receive user input via command line",
-  "main": "index.js",
+  "main": "dist/index.js",
   "ava": {
     "files": [
       "test/*.js"
@@ -20,6 +20,9 @@
       "add-module-exports"
     ]
   },
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "start": "gulp",
     "prepublish": "gulp transpile",
