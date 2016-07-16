@@ -2,6 +2,8 @@
 
 This package is perfect for asking the users of your command line interface to provide a certain kind of information that's needed for continuing with execution of the program.
 
+Although it's not a explicit requirement, the package works best when used in combination with [args](https://github.com/leo/args).
+
 ## Contribute
 
 1. [Fork](https://help.github.com/articles/fork-a-repo/) this repository to your own GitHub account and then [clone](https://help.github.com/articles/cloning-a-repository/) it to your local device
